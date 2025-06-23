@@ -36,11 +36,10 @@ export default function AdminPage() {
 
   useEffect(() => {
     const fetchStats = async () => {
-      const supabase = createClient(
-        process.env.NEXT_PUBLIC_SUPABASE_URL,
-        process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-      )
-
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY,
+)
       const [users, produk, review, pembelian] = await Promise.all([
         supabase.from('users').select('role'),
         supabase.from('produk').select('type'),
