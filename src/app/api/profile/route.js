@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 const supabase = createClient(
   process.env.SUPABASE_URL,
-  process.env.SUPABASE_ANON_KEY
+  process.env.SUPABASE_ANON_KEY,
 )
 
 // GET: Ambil data user berdasarkan email
